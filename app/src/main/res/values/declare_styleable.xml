@@ -8,4 +8,5 @@
         <attr name="spacing" format="dimension" />
         <attr name="bottomLineWidth" format="dimension" />
     </declare-styleable>
+
 </resources>
