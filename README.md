@@ -39,3 +39,16 @@ String msg = numberInputView.getText();
 ```
 
 **重要：如果要用在生产上，请注意keep这个View，否则会导致混淆之后无法使用**
+
+## 定制
+提供了以下属性，方便大家进行定制  
+```xml
+    <declare-styleable name="NumberInputView">
+        <attr name="activeColor" format="color" />
+        <attr name="inactiveColor" format="color" />
+        <attr name="numberColor" format="color" />
+        <attr name="numberTextSize" format="dimension" />
+        <attr name="spacing" format="dimension" />
+        <attr name="bottomLineWidth" format="dimension" />
+    </declare-styleable>
+```
