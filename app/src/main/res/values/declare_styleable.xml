@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="NumberInputView">
+        <attr name="activeColor" format="color" />
+        <attr name="inactiveColor" format="color" />
+        <attr name="numberColor" format="color" />
+        <attr name="numberTextSize" format="dimension" />
+        <attr name="spacing" format="dimension" />
+        <attr name="bottomLineWidth" format="dimension" />
+    </declare-styleable>
+</resources>
