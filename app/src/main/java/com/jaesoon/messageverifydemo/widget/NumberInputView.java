@@ -26,7 +26,7 @@ public class NumberInputView extends LinearLayout {
     private String TAG = "NumberInputView";
     private InputMethodManager input;//输入法管理
     private ArrayList<Integer> result;//输入结果保存
-    private int count = 6;//密码位数
+    private int digit = 6;//密码位数
     private int mActiveColor = Color.parseColor("#6ae1ff");
     private int mInactiveColor = Color.parseColor("#47b4db");
     private int mTextColor = Color.parseColor("#000000");
@@ -73,6 +73,9 @@ public class NumberInputView extends LinearLayout {
                     break;
                 case R.styleable.NumberInputView_bottomLineWidth:
                     mBottomLineWidth = a.getDimensionPixelSize(attr, mBottomLineWidth);
+                    break;
+                case R.styleable.NumberInputView_digit:
+                    digit = a.getInt(attr, digit);
                     break;
             }
         }
@@ -176,7 +179,7 @@ public class NumberInputView extends LinearLayout {
                 }
                 int keyCode = event.getKeyCode();
                 if (keyCode >= KeyEvent.KEYCODE_0 && keyCode <= KeyEvent.KEYCODE_9) {//只处理数字
-                    if (result.size() < count) {
+                    if (result.size() < digit) {
                         result.add(keyCode - KeyEvent.KEYCODE_0);
                         if (getChildAt(result.size() - 1) instanceof SingleNumberView) {
                             Log.e(TAG, keyCode + ";");
@@ -218,7 +221,7 @@ public class NumberInputView extends LinearLayout {
      * 判断是否输入完成，输入完成后调用callback
      */
     void ensureFinishInput() {
-        if (result.size() == count) {//输入完成
+        if (result.size() == digit) {//输入完成
             if (inputCallBack != null) {
                 StringBuffer sb = new StringBuffer();
                 for (int i : result) {
