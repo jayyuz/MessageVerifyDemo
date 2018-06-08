@@ -50,5 +50,6 @@ String msg = numberInputView.getText();
         <attr name="numberTextSize" format="dimension" />
         <attr name="spacing" format="dimension" />
         <attr name="bottomLineWidth" format="dimension" />
+        <attr name="digit" format="integer" />
     </declare-styleable>
 ```
